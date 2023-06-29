@@ -1,4 +1,4 @@
-# SetWindowsHookEx-Injector
+# Global-SetWindowsHookEx-Injector
 SetWindowsHookEx Injector with d3d11 hook example
 
 - hookloader.exe = injector
