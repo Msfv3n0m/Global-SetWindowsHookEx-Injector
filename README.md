@@ -1,5 +1,5 @@
 # Global-SetWindowsHookEx-Injector
-SetWindowsHookEx Injector with d3d11 hook example
+Injects as many processes as possible with d3d11 hook example
 
 - hookloader.exe = injector
 - test.dll = dll
