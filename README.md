@@ -1,6 +1,6 @@
 # Global-SetWindowsHookEx-Injector
-
-
+Hooks a bunch of user processes with a dll that launches a thread that spawns a messagebox whenever it is loaded
+## Usage
 1. Just add this to your dll:
 extern "C" __declspec(dllexport) int NextHook(int code, WPARAM wParam, LPARAM lParam) {
 	return CallNextHookEx(NULL, code, wParam, lParam);
