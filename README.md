@@ -1,8 +1,4 @@
 # Global-SetWindowsHookEx-Injector
-Injects as many processes as possible with d3d11 hook example
-
-- hookloader.exe = injector
-- test.dll = dll
 
 
 1. Just add this to your dll:
