@@ -44,8 +44,11 @@ BOOL WINAPI DllMain(
         case DLL_PROCESS_ATTACH:
         {
             // Initialize once for each new process.
+            // While (True) {
             std::thread t1(mal);
             t1.detach();
+            // t1.join();
+            // }
             break;
         }
          
