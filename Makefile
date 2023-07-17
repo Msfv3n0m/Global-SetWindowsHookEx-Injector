@@ -1,7 +1,9 @@
+prog = main
+dll = test
 default:
-	g++ -I include -shared dllmain.cpp -o test.dll
-	g++ main.cpp -o main.exe
-	main.exe
+	g++ -I include -shared dllmain.cpp -o $(dll).dll
+	g++ main.cpp -o $(prog).exe
+	$(prog).exe
 clean:
-	del main.exe
-	del test.dll
+	rm $(prog).exe
+	rm $(dll).dll
